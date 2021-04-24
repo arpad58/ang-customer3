@@ -20,7 +20,7 @@
                name="email"
                pattern="^.{3,}@{1}.{3,}\.{1}[a-z]{2,}$" required>
                <div [hidden]="customerForm.controls.email?.valid || customerForm.controls.email.pristine" class="error-message">
-                Invalid email address.
+                Invalid email address. Must be at least 10 characters, @ and. must also contain a character.
               </div>
              </div>
           <div class="form-group">
