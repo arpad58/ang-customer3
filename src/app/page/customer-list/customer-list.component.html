@@ -35,6 +35,9 @@
             <td>{{customer.rating}}</td>
             <td>{{customer.address}}</td>
             <td class="btn-group">
+              <button [routerLink]="['customer/' + customer.id]" class="btn btn-info">
+                <i class="fa fa-pencil"></i>
+              </button>
               <button (click)="onDelete(customer)" class="btn btn-danger">
                 <i class="fa fa-trash"></i>
               </button>

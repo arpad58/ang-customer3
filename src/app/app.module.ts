@@ -10,6 +10,7 @@ import { CustomerListComponent } from './page/customer-list/customer-list.compon
 import { CustomerEditorComponent } from './page/customer-editor/customer-editor.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
+import { CustomerUpdateComponent } from './page/customer-update/customer-update.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SorterPipe } from './pipe/sorter.pipe';
     CustomerListComponent,
     CustomerEditorComponent,
     FilterPipe,
-    SorterPipe
+    SorterPipe,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,
