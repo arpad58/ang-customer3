@@ -46,7 +46,7 @@
 
         <div class="form-group">
           <!-- save button  update -->
-          <button  type="submit" class="btn btn-primary btn-block mt-5">
+          <button [disabled]="customerForm.invalid"  type="submit" class="btn btn-primary btn-block mt-5">
             <i class="fa fa-save"></i>
           </button>
         </div>
