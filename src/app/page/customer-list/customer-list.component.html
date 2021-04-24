@@ -1,12 +1,21 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-10 offset-1">
       <h2>Customer List</h2>
       <div>
         <button [routerLink]="['/customer-editor']" class="btn btn-primary btn-block">
           <i class="fa fa-plus"></i>
         </button>
+      </div>
+      <div>
+        <input
+          (keyup)="onFilterPhrase($event)"
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
       </div>
        <table class="table">
          <thead>
@@ -20,14 +29,13 @@
            </tr>
          </thead>
          <tbody>
-          <tr *ngFor="let customer of customerList$ | async">
+          <tr *ngFor="let customer of customerList$ | async| filter: phrase: 'name'">
             <td>{{customer.id}}</td>
             <td>{{customer.name}}</td>
             <td>{{customer.email}}</td>
             <td>{{customer.rating}}</td>
             <td>{{customer.address}}</td>
             <td class="btn-group">
-
               <button (click)="onDelete(customer)" class="btn btn-danger">
                 <i class="fa fa-trash"></i>
               </button>

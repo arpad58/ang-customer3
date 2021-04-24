@@ -12,6 +12,8 @@ export class CustomerListComponent implements OnInit {
 
   customerList$: Observable<Customer[]> = this.customerService.getAll();
 
+  phrase: string = '';
+
   constructor(
     private customerService: CustomerService
   ) { }
@@ -27,5 +29,10 @@ export class CustomerListComponent implements OnInit {
        }
     );
   }
+
+  onFilterPhrase(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
+
 
 }

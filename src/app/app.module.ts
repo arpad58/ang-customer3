@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { CustomerListComponent } from './page/customer-list/customer-list.component';
 import { CustomerEditorComponent } from './page/customer-editor/customer-editor.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CustomerListComponent,
-    CustomerEditorComponent
+    CustomerEditorComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
