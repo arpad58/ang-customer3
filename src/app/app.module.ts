@@ -9,6 +9,7 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { CustomerListComponent } from './page/customer-list/customer-list.component';
 import { CustomerEditorComponent } from './page/customer-editor/customer-editor.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { SorterPipe } from './pipe/sorter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     NavbarComponent,
     CustomerListComponent,
     CustomerEditorComponent,
-    FilterPipe
+    FilterPipe,
+    SorterPipe
   ],
   imports: [
     BrowserModule,

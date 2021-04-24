@@ -14,6 +14,9 @@ export class CustomerListComponent implements OnInit {
 
   phrase: string = '';
 
+  direction: number = 1;
+  columnKey: string = '';
+
   constructor(
     private customerService: CustomerService
   ) { }
@@ -33,6 +36,16 @@ export class CustomerListComponent implements OnInit {
   onFilterPhrase(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
   }
+
+  onColumnSelect(key: string): void {
+    if (this.columnKey === key) {
+      this.direction = this.direction * -1;  /* -1 esetén  */     /*  1 esetén  */     /*  1 esetén  */
+    } else {                           /* NÖVEKVŐ és CSÖKKENŐ*/    /* NÖVEKVŐ */    /* CSÖKKENŐ  */
+      this.direction = 1;                              /*  1 esetén  */    /*  1 esetén  */     /*  -1 esetén  */
+    }
+    this.columnKey = key;
+  }
+
 
 
 }

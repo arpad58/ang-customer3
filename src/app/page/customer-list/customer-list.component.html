@@ -18,18 +18,17 @@
         />
       </div>
        <table class="table">
-         <thead>
-           <tr>
-             <th>#</th>
-             <th>Name</th>
-             <th>Email</th>
-             <th>Rating</th>
-             <th>Address</th>
-             <th></th>
-           </tr>
-         </thead>
+        <thead>
+          <tr>   <!--    sorter            --> <!-- table -->
+            <th (click)="onColumnSelect('id')">#</th>
+            <th (click)="onColumnSelect('name')">Name</th>
+            <th (click)="onColumnSelect('email')">Email</th>
+            <th (click)="onColumnSelect('rating')">Rating</th>
+            <th (click)="onColumnSelect('address')">Address</th>
+          </tr>
+        </thead>
          <tbody>
-          <tr *ngFor="let customer of customerList$ | async| filter: phrase: 'name'">
+          <tr *ngFor="let customer of customerList$ | async| filter: phrase: 'name' | sorter: columnKey:direction ">
             <td>{{customer.id}}</td>
             <td>{{customer.name}}</td>
             <td>{{customer.email}}</td>
