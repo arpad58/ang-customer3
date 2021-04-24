@@ -19,4 +19,13 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete(customer: Customer): void {
+
+    this.customerService.delCustomer(customer).subscribe(
+      () => {
+         this.customerList$ = this.customerService.getAll();
+       }
+    );
+  }
+
 }
