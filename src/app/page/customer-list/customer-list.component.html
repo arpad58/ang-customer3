@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h2>Customer List</h2>
+       <table class="table">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Rating</th>
+             <th>Address</th>
+             <th></th>
+           </tr>
+         </thead>
+         <tbody>
+          <tr *ngFor="let customer of customerList$ | async">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.rating}}</td>
+            <td>{{customer.address}}</td>
+            <td>       <!-- (click)="onDelete(customer)" később beilleszteni-->
+              <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+           </tr>
+        </tbody>
+       </table>
+    </div>
+  </div>
+</div>
+
